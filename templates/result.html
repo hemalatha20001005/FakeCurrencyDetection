@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block result %}
+<div style="background-image: url(./static/images/note.jpg); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 80%;">
+    <div class="container">
+        <a href="/ff"><button class="btn btn-primary btn-lg float-right mt-2">Form</button></a>
+        <a href="/"><button class="btn btn-primary btn-lg float-left mt-3">Main</button></a><br>
+    </div><br><br><br>
+    <div class="container col-md-9" style="opacity: 0.8;">
+        <div class="card">
+            <div class="card-header">
+                <h2 style=font-size:25px;>Your Result Card</h2>
+            </div>
+            <div class="card-body">
+              <table style="width:100%">
+                <tr>
+                  <td>Variance: </td>
+                  <td>{{variance}}</td>
+                </tr>
+                <tr>
+                  <td>Asymmetry: </td>
+                  <td>{{asymmetry}}</td>
+                </tr>
+                <tr>
+                  <td>Kurtosis : </td>
+                  <td>{{kurtosis}}</td>
+                </tr>
+                <tr>
+                  <td>Image Entropy : </td>
+                  <td>{{Imageentropy}}</td>
+                </tr>
+                </table>
+                <p id="fake" style="font-size: 23px; color: red;"></p>
+                <p id="real" style="font-size: 23px; color: Green;"></p>
+                <!---<h2 class="text-danger">Final Result : {{rrr}}</h2>--->
+              	{% if  rrr ==0 %}
+                  	<script>
+                         document.getElementById("real").innerHTML = "The Currency Note is Real";
+                   		   //alert("The Currency Note is Real")
+                    </script>
+                	{% endif %}
+
+                	{% if  rrr ==1 %}
+                  	<script>
+                        document.getElementById("fake").innerHTML = "The Currency Note is Fake"
+              		      //alert("The Currency Note is Fake")
+                    </script>
+                	{% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

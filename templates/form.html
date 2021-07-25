@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block form%}
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<div class="text-center">
+<h2 style="color:#db1a47 ;font-size:5vw;">FAKE CURRENCY DETECTION</h2>
+</div>
+    <div class="container col-xs-6 col-sm-12 col-lg-12" style="opacity: 0.8;">
+        <div class="card">
+            <div class="card-body" style ="background-color:#95e0e8;">
+                <form action="/predict" method="POST">
+                   
+                    <div class="form-group" >
+                        <label for="variance"  style="font-size:13px;"><b>Variance</b></label><br>
+                        <input type="float" name="variance" placeholder="Enter Variance" class="form-control" style="height:21px;border:3px solid salmon;"  required>
+                    </div>
+
+                    <div class="form-group" >
+                        <label for="asymmetry"  style="font-size:13px;"><b>Asymmetry</b></label><br>
+                        <input type="float" name="asymmetry" placeholder="Enter Asymmetry value" class="form-control" style="height:21px;border:3px solid salmon;"  required>
+                    </div>
+          
+                    <div class="form-group" >
+                        <label for="kurtosis" style="font-size:13px;"><b>Kurtosis</b></label><br>
+                        <input type="float" name="kurtosis" placeholder="Enter Kurtosis value" class="form-control" style="height:20px;border:3px solid salmon;"  required>
+                    </div>
+
+                      <div class="form-group" >
+                        <label for="Imageentropy" style="font-size:13px;"><b>Image Entropy</b></label><br>
+                        <input type="float" name="Imageentropy" placeholder="Enter Image Entropy value" step="0.1" style="height:20px;border:3px solid salmon;"  class="form-control" required>
+                    </div>
+                     <button class="btn btn-success btn-lg" style="font-size:14px;" "  type="submit">Submit</button>
+                     <button class="btn btn-warning btn-lg float-right" style="font-size:14px;" "type="reset">Clear</button>
+                    
+                </form>
+            </div>
+        </div>
+      </div>
+</div>
+{% endblock%}
